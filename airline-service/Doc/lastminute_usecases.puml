@@ -1,7 +1,6 @@
 @startuml
 left to right direction
 skinparam packageStyle rectangle
-'actor lastminute << Application >>
 actor User
 
 rectangle lastminute-service {
@@ -11,14 +10,14 @@ rectangle lastminute-service {
 }
 
 rectangle airline-service {
-  (Flugdaten abholen) <- (Kombiangebote aktualisieren)
+  (Flugdaten anbieten) <- (Kombiangebote aktualisieren)
   (Flugdaten hinterlegen)
   (Sitzplatz reservieren) <- (Resevation vornehmen)
 }
 
 rectangle hotel-service {
   (unbelegte Zimmer hinterlegen)
-  (Freie Zimmerdaten abholen) <- (Kombiangebote aktualisieren)
+  (Freie Zimmerdaten anbieten) <- (Kombiangebote aktualisieren)
   (Zimmer reservieren) <- (Resevation vornehmen)
 }
 
