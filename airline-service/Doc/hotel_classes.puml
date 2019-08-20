@@ -1,0 +1,10 @@
+@startuml
+class Room {
+    id : Integer
+    company : String
+    availableFrom : String
+    availableTo : String
+    location : String
+    capacity : Integer
+}
+@enduml
