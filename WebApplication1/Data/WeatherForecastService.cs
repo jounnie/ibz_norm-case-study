@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore;
 
 namespace WebApplication1.Data
 {
@@ -20,7 +21,7 @@ namespace WebApplication1.Data
                 Arrival = startDate.AddDays(index),
                 Departure = Cities[rng.Next(Cities.Length)],
                 Destination = Cities[rng.Next(Cities.Length)]
-            }).ToArray());
-        }
+            }).ToArray());   
+        }        
     }
 }
