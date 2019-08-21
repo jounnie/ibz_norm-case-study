@@ -1,0 +1,10 @@
+@startuml
+class Flight {
+    id : Integer
+    company : String
+    flyingFrom : String
+    flyingTo : String
+    departureTime : Date
+    capacity : Integer
+}
+@enduml

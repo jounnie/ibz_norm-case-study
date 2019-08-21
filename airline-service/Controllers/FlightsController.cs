@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using airline_service.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +9,17 @@ namespace airline_service.Controllers
     [ApiController]
     public class FlightsController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private readonly AirlineDbContext _context;
+
+        public FlightsController(AirlineDbContext context)
         {
-            return new string[] {"value1", "value2"};
+            _context = context;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Flights>> Get()
+        {
+            return _context.Flights.ToList();
         }
 
         // GET api/values/5
