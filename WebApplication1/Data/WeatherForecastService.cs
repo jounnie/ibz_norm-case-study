@@ -6,19 +6,20 @@ namespace WebApplication1.Data
 {
     public class WeatherForecastService
     {
-        private static readonly string[] Summaries = new[]
+        private static readonly string[] Cities = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Tokyo", "Zurich", "Basel", "Munich", "Berlin", "Rome", "Paris", "Amsterdam", "London", "New York"
         };
 
         public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
         {
             var rng = new Random();
-            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Task.FromResult(Enumerable.Range(1, 15).Select(index => new WeatherForecast
             {
-                Date = startDate.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
+                DepDate = startDate.AddDays(index),
+                Arrival = startDate.AddDays(index),
+                Departure = Cities[rng.Next(Cities.Length)],
+                Destination = Cities[rng.Next(Cities.Length)]
             }).ToArray());
         }
     }

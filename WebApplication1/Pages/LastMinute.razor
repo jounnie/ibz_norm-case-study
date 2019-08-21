@@ -7,6 +7,18 @@
 
 <p>Select a last minute booking</p>
 
+
+<h2>Search</h2>
+
+<div class="row">
+    <input type="text" placeholder="Departure" class="form-control col-sm-1" @bind="@DepSearch"/>
+    <input type="text" placeholder="Destination" class="form-control col-sm-1" @bind="@ArrSearch"  />
+    <button class="btn btn-primary" @onclick="Search">Search</button>
+</div>
+<br />
+
+
+
 @if (forecasts == null)
 {
     <p><em>Loading...</em></p>
@@ -17,22 +29,22 @@ else
         <thead>
             <tr>
                 <th></th>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>Departure</th>
+                <th>Destination</th>
+                <th>Departure Date</th>
+                <th>Arrival Date</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var forecast in forecasts)
             {
-            <tr>
-                <td><button class="btn btn-primary">Ordner</button></td>
-                <td>@forecast.Date.ToShortDateString()</td>
-                <td>@forecast.TemperatureC</td>
-                <td>@forecast.TemperatureF</td>
-                <td>@forecast.Summary</td>
-            </tr>
+                <tr>
+                    <td><button class="btn btn-primary">Ordner</button></td>
+                    <td>@forecast.Departure</td>
+                    <td>@forecast.Destination</td>
+                    <td>@forecast.DepDate.ToShortDateString()</td>
+                    <td>@forecast.Arrival.ToShortDateString()</td>
+                </tr>
             }
         </tbody>
     </table>
@@ -41,6 +53,10 @@ else
 }
 
 @code {
+
+    private string DepSearch;
+    private string ArrSearch;
+
     WeatherForecast[] forecasts;
 
     protected override async Task OnInitializedAsync()
@@ -48,7 +64,13 @@ else
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     }
 
-    private void RefreshPage(){
+    private void RefreshPage()
+    {
         StateHasChanged();
     }
+
+    private void Search() {
+        
+    }
+    
 }
