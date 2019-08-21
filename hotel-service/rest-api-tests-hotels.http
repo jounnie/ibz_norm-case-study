@@ -1,0 +1,5 @@
+GET http://localhost:5010/api/rooms
+Accept: */*
+Cache-Control: no-cache
+
+###
