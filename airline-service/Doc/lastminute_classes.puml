@@ -1,0 +1,19 @@
+@startuml
+class Room {
+    id : Integer
+    company : String
+    availableFrom : Date
+    availableTo : Date
+    location : String
+    capacity : Integer
+}
+
+class Flight {
+    id : Integer
+    company : String
+    flyingFrom : String
+    flyingTo : String
+    departureTime : DateTime
+    capacity : Integer
+}
+@enduml

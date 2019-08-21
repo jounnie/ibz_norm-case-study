@@ -1,4 +1,4 @@
-GET http://localhost:5000/api/users/1
+GET http://localhost:5000/api/flights
 Accept: */*
 Cache-Control: no-cache
 
