@@ -9,8 +9,9 @@ using last_minute.Models;
 
 namespace last_minute.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+    
     public class LastMinutesController : ControllerBase
     {
         private readonly LastMinuteContext _context;

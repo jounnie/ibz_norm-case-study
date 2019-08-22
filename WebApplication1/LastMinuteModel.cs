@@ -1,9 +1,11 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace last_minute.Models
+namespace WebApplication1
 {
-    public class LastMinute
+    public class LastMinuteModel
     {
         public int Id { get; set; }
         public string Flying_From { get; set; }

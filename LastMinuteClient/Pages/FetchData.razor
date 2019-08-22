@@ -1,0 +1,90 @@
+﻿@page "/fetchdata"
+
+@inject HttpClient Http
+
+
+<h1>Last minute bookings</h1>
+
+<p>Select a last minute booking</p>
+
+
+<h2>Search</h2>
+
+<div class="row">
+    <input type="text" placeholder="Departure" class="form-control col-sm-1" @bind="@DepSearch" />
+    <input type="text" placeholder="Destination" class="form-control col-sm-1" @bind="@ArrSearch" />
+    <button class="btn btn-primary" @onclick="Search">Search</button>
+</div>
+<br />
+
+@if (flights == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flights in flights)
+            {
+                <tr>
+                    <td><button class="btn btn-primary">Ordner</button></td>
+                    <td>@flights.Flying_From</td>
+                    <td>@flights.Flying_To</td>
+                    <td>@flights.Departure_Date.ToShortDateString()</td>
+                    <td>@flights.Departure_Date.AddDays(07).ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
+    <button class="btn btn-primary" @onclick="RefreshPage">Refresh</button>
+}
+
+@code {
+    private string DepSearch;
+    private string ArrSearch;
+
+    Flights[] flights;
+
+    private void RefreshPage()
+    {
+        StateHasChanged();
+    }
+
+    private void Search()
+    {
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        Http.BaseAddress = new Uri("http://localhost:5000");
+
+        flights = await Http.GetJsonAsync<Flights[]>("/api/flights");
+
+
+    }
+
+    public class Flights
+    {
+        public int Id { get; set; }
+        public int Capacity { get; set; }
+        public string Flying_From { get; set; }
+        public string Flying_To { get; set; }
+        public DateTime Departure_Date { get; set; }
+        public string Company { get; set; }
+    }
+
+
+}
+
