@@ -29,8 +29,8 @@ Applikation)
 
 ## User Stories
 
-|User Story||
-|---|---|---|
+|User Story|
+|---|
 |US1 - Airline Service: Bereitstellen der Flugdaten|
 |US2 - Hotel Service: Bereitstellen der Hoteldaten|
 |US3 - Last Minute Service: Auslesen der Flugdaten von den Airline Services|
