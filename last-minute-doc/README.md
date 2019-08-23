@@ -62,7 +62,7 @@ tbd
 |Preconditions|
 |Success End Condition|
 |Failed End Condition|
-|Primary, 
+|Primary,
 Secondary Actors|
 |Trigger|
 |DESCRIPTION|Step|Action|
@@ -78,4 +78,8 @@ VARIANTEN?
 
 ## Testplan & Resultate
 
+![Testplan](pics/Testplan.png)
+
 # Probleme
+
+![Probleme](pics/Probleme.png)
