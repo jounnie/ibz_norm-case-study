@@ -69,7 +69,7 @@ else
     {
         HttpClient Data = new HttpClient();
 
-        //Data.BaseAddress = new Uri("http://localhost:5000");
+        Data.BaseAddress = new Uri("http://localhost:5000");
         flights = await Data.GetJsonAsync<Flights[]>("/api/flights");
 
 
