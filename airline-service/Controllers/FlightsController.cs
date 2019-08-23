@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using airline_service.Entities;
+using last_minute_shared;
 using Microsoft.AspNetCore.Mvc;
 
 namespace airline_service.Controllers

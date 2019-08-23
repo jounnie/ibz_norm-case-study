@@ -7,6 +7,8 @@ namespace LastMinuteServiceClient
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<FlightsService, FlightsService>();
+
         }
 
         public void Configure(IComponentsApplicationBuilder app)

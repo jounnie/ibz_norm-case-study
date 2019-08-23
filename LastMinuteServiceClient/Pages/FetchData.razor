@@ -1,6 +1,9 @@
 ﻿@page "/fetchdata"
 
+@using last_minute_shared
+
 @inject HttpClient Http
+@inject FlightsService FlightsService
 
 
 <h1>Last minute bookings</h1>
@@ -33,14 +36,14 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var flights in flights)
+            @foreach (var flight in flights)
             {
                 <tr>
                     <td><button class="btn btn-primary">Ordner</button></td>
-                    <td>@flights.flying_From</td>
-                    <td>@flights.flying_To</td>
-                    <td>@flights.departure_Date.ToShortDateString()</td>
-                    <td>@flights.departure_Date.AddDays(07).ToShortDateString()</td>
+                    <td>@flight.Flying_From</td>
+                    <td>@flight.Flying_To</td>
+                    <td>@flight.Departure_Date.ToShortDateString()</td>
+                    <td>@flight.Departure_Date.AddDays(07).ToShortDateString()</td>
                 </tr>
             }
         </tbody>
@@ -67,24 +70,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        HttpClient Data = new HttpClient();
-
-        Data.BaseAddress = new Uri("http://localhost:5000");
-        flights = await Data.GetJsonAsync<Flights[]>("/api/flights");
-
-
+        flights = await FlightsService.LoadFlights();
     }
-
-    public class Flights
-    {
-        public int id { get; set; }
-        public int capacity { get; set; }
-        public string flying_From { get; set; }
-        public string flying_To { get; set; }
-        public DateTime departure_Date { get; set; }
-        public string company { get; set; }
-    }
-
-
 }
 

@@ -1,4 +1,5 @@
 using System;
+using last_minute_shared;
 using Microsoft.EntityFrameworkCore;
 
 namespace airline_service.Entities
@@ -10,15 +11,5 @@ namespace airline_service.Entities
         }
 
         public DbSet<Flights> Flights { get; set; }
-    }
-
-    public class Flights
-    {
-        public int Id { get; set; }
-        public int Capacity { get; set; }
-        public string Flying_From { get; set; }
-        public string Flying_To { get; set; }
-        public DateTime Departure_Date { get; set; }
-        public string Company { get; set; }
     }
 }
