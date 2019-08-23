@@ -18,7 +18,7 @@ namespace LastMinuteServiceClient
 
         public async Task<Flights[]> LoadFlights()
         {
-            var jsonAsync = await _httpClient.GetJsonAsync<Flights[]>("localhost:5000/api/flights");
+            var jsonAsync= await _httpClient.GetJsonAsync<Flights[]>("http://localhost:5030/api/lastminutes");
             return jsonAsync;
         }
     }
