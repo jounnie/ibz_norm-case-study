@@ -29,10 +29,11 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th></th>
+                <th>Departure</th>
+                <th>Destination</th>
+                <th>Departure Date</th>
+                <th>Arrival Date</th>
             </tr>
         </thead>
         <tbody>
@@ -43,7 +44,7 @@ else
                     <td>@flight.Flying_From</td>
                     <td>@flight.Flying_To</td>
                     <td>@flight.Departure_Date.ToShortDateString()</td>
-                    <td>@flight.Departure_Date.AddDays(07).ToShortDateString()</td>
+                    <td>@flight.Arrival_Date.ToShortDateString()</td>
                 </tr>
             }
         </tbody>

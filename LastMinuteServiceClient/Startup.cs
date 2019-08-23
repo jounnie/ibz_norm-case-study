@@ -9,11 +9,14 @@ namespace LastMinuteServiceClient
         {
             services.AddSingleton<FlightsService, FlightsService>();
 
+            
+
         }
 
         public void Configure(IComponentsApplicationBuilder app)
         {
             app.AddComponent<App>("app");
+            
         }
     }
 }

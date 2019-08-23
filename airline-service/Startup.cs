@@ -21,18 +21,20 @@ namespace airline_service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers()
-                .AddNewtonsoftJson();
-
-            services.AddDbContext<AirlineDbContext>(options => 
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
+
+            services.AddControllers()
+                .AddNewtonsoftJson();
+
+            services.AddDbContext<AirlineDbContext>(options => 
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            
         }
 
 
