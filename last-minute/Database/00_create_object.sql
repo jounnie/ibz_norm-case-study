@@ -7,5 +7,5 @@ create table lastminute
 	flying_from TEXT not null,
 	flying_to TEXT not null,
 	departure_date TEXT not null,
-	arrival_date TEXT not null,
+	arrival_date TEXT not null
 );
