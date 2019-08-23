@@ -67,10 +67,10 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        HttpClient Data = new HttpClient();
+        Data.BaseAddress = new Uri("http://localhost:5000");
 
-        Http.BaseAddress = new Uri("http://localhost:5000");
-
-        flights = await Http.GetJsonAsync<Flights[]>("/api/flights");
+        flights = await Data.GetJsonAsync<Flights[]>("/api/flights");
 
 
     }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace LastMinuteClient
+namespace LastMinuteServiceClient
 {
     public class Program
     {
