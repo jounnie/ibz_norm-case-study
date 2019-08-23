@@ -82,4 +82,4 @@ VARIANTEN?
 
 # Probleme
 
-![Probleme](pics/Probleme.PNG)
+![Probleme](pics/probleme.PNG)
