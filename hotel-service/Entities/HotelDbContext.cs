@@ -1,4 +1,5 @@
 using System;
+using last_minute_shared;
 using Microsoft.EntityFrameworkCore;
 
 namespace hotel_service.Entities
@@ -10,14 +11,5 @@ namespace hotel_service.Entities
         }
 
         public DbSet<Rooms> Rooms { get; set; }
-    }
-
-    public class Rooms
-    {
-        public int Id { get; set; }
-        public int Capacity { get; set; }
-        public string Name { get; set; }
-        public string Location { get; set; }
-        public string Company { get; set; }
     }
 }

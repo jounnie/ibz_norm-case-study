@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using hotel_service.Entities;
+using last_minute_shared;
 using Microsoft.AspNetCore.Mvc;
 
 namespace hotel_service.Controllers
