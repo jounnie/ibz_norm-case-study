@@ -1,0 +1,17 @@
+@startgantt
+Project starts the 14th of june 2019
+
+[Analysis] as [A] lasts 30 days
+
+[Design] as [D] lasts 20 days
+[D] starts at [A]'s end
+
+[Implementation] as [I] lasts 10 days
+[I] starts at [D]'s end
+
+[Testing] as [T] lasts 10 days
+[T] starts at [I]'s end
+
+[Abgabe & Präsentation] happens at 2019-08-23
+
+@endgantt
