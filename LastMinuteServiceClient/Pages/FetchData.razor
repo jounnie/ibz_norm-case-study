@@ -37,10 +37,10 @@ else
             {
                 <tr>
                     <td><button class="btn btn-primary">Ordner</button></td>
-                    <td>@flights.Flying_From</td>
-                    <td>@flights.Flying_To</td>
-                    <td>@flights.Departure_Date.ToShortDateString()</td>
-                    <td>@flights.Departure_Date.AddDays(07).ToShortDateString()</td>
+                    <td>@flights.flying_From</td>
+                    <td>@flights.flying_To</td>
+                    <td>@flights.departure_Date.ToShortDateString()</td>
+                    <td>@flights.departure_Date.AddDays(07).ToShortDateString()</td>
                 </tr>
             }
         </tbody>
@@ -53,7 +53,7 @@ else
     private string DepSearch;
     private string ArrSearch;
 
-    Flights[] flights;
+    Flights[] flights = Array.Empty<Flights>();
 
     private void RefreshPage()
     {
@@ -68,8 +68,8 @@ else
     protected override async Task OnInitializedAsync()
     {
         HttpClient Data = new HttpClient();
-        Data.BaseAddress = new Uri("http://localhost:5000");
 
+        //Data.BaseAddress = new Uri("http://localhost:5000");
         flights = await Data.GetJsonAsync<Flights[]>("/api/flights");
 
 
@@ -77,12 +77,12 @@ else
 
     public class Flights
     {
-        public int Id { get; set; }
-        public int Capacity { get; set; }
-        public string Flying_From { get; set; }
-        public string Flying_To { get; set; }
-        public DateTime Departure_Date { get; set; }
-        public string Company { get; set; }
+        public int id { get; set; }
+        public int capacity { get; set; }
+        public string flying_From { get; set; }
+        public string flying_To { get; set; }
+        public DateTime departure_Date { get; set; }
+        public string company { get; set; }
     }
 
 
