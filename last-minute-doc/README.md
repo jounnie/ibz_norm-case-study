@@ -78,8 +78,8 @@ VARIANTEN?
 
 ## Testplan & Resultate
 
-![Testplan](pics/Testplan.png)
+![Testplan](pics/Testplan.PNG)
 
 # Probleme
 
-![Probleme](pics/Probleme.png)
+![Probleme](pics/Probleme.PNG)
