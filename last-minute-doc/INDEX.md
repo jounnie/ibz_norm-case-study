@@ -27,11 +27,28 @@ Applikation)
 
 ![Aufgabestellung](pics/aufgabestellung.png)
 
+## User Stories
+
+|User Story||
+|---|---|---|
+|US1 - Airline Service: Bereitstellen der Flugdaten|
+|US2 - Hotel Service: Bereitstellen der Hoteldaten|
+|US3 - Last Minute Service: Auslesen der Flugdaten von den Airline Services|
+|US4 - Last Minute Service: Auslesen der Hoteldaten von den Hotel Services|
+|US5 - Last Minute Service: Erstellen der Kombiangebote und speichern in die Datenbank.|
+|US6 - Last Minute Client: Auslesen und Darstellen der Kombiangebote vom Last Minute Service|
+|US7 - Last Minute Client: Buchung der Kombiangebote|
+
 ## Projektplan
 
 ![gannt](pics/gantt.png)
 
+# Analyse
+
 ## Stakeholder
+
+tbd
+
 ## Usecases
 overview pic mit Muss/Wunschziele
 ### UC1 - So und so
@@ -50,9 +67,13 @@ Secondary Actors|
 | |1|blabla|
 |EXTENSIONS|Step| Branching Action|
 | |1a|blabla|
-## 
-### Doc
-#### Doc
-##### Doc
-###### Doc
-####### Doc
+
+# Design
+
+VARIANTEN?
+
+# Implementation
+
+## Testplan & Resultate
+
+# Probleme

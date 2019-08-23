@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor User
+
+rectangle lastminute-service {
+  (Kombiangebote durchsuchen) -- User
+  (Resevation vornehmen) -- User
+  (Kombiangebote aktualisieren) -- User
+}
+
+rectangle airline-service {
+  (Flugdaten anbieten) <- (Kombiangebote aktualisieren)
+  (Flugdaten hinterlegen)
+  (Sitzplatz reservieren) <- (Resevation vornehmen)
+}
+
+rectangle hotel-service {
+  (unbelegte Zimmer hinterlegen)
+  (Freie Zimmerdaten anbieten) <- (Kombiangebote aktualisieren)
+  (Zimmer reservieren) <- (Resevation vornehmen)
+}
+
+note "nur über einen Datebankzugriff" as N1
+(Flugdaten hinterlegen) .. N1
+(unbelegte Zimmer hinterlegen) .. N1
+@enduml
