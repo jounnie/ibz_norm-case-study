@@ -31,6 +31,14 @@ namespace last_minute
                 .AddNewtonsoftJson();
             services.AddDbContext<LastMinuteContext>(options => 
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +48,8 @@ namespace last_minute
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("MyPolicy");
 
             app.UseHttpsRedirection();
 
