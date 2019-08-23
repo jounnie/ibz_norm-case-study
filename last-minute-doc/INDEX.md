@@ -7,13 +7,21 @@ add gant
 ## Usecases
 overview pic mit Muss/Wunschziele
 ### UC1 - So und so
-cockburn
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
 
+| USE CASE # | UC1 - So und so ||
+| --- | --- | --- |
+|Goal in Context|
+|Scope & Level|
+|Preconditions|
+|Success End Condition|
+|Failed End Condition|
+|Primary, 
+Secondary Actors|
+|Trigger|
+|DESCRIPTION|Step|Action|
+| |1|blabla|
+|EXTENSIONS|Step| Branching Action|
+| |1a|blabla|
 ## 
 ### Doc
 #### Doc
