@@ -1,6 +1,7 @@
 @startuml classes
 class Room {
-    id : Integer
+    id : Long
+    uuid: String
     company : String
     availableFrom : Date
     availableTo : Date
@@ -9,11 +10,23 @@ class Room {
 }
 
 class Flight {
-    id : Integer
+    id : Long
+    uuid: String
     company : String
     flyingFrom : String
     flyingTo : String
     departureTime : DateTime
     capacity : Integer
 }
+
+class RoomFlightOffer {
+    id : Long
+    flightId : Long
+    flightCompany: Long
+    roomId : Long
+    createDate: Date
+}
+
+RoomFlightOffer -- Room
+RoomFlightOffer -- Flight
 @enduml

@@ -15,4 +15,8 @@
     <Folder Include="Properties\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\last-minute-shared\last-minute-shared.csproj" />
+  </ItemGroup>
+
 </Project>
