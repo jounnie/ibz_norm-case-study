@@ -1,0 +1,150 @@
+GET https://localhost:5031/api/lastminutes
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-08-23T085634.500.txt
+
+###
+
+GET https://localhost:5031/api/lastminutes
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-08-23T085545.500.txt
+
+###
+
+GET https://localhost:5031/api/lastminutes
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-08-23T083303.500.txt
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-08-23T083107.500.txt
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-08-23T081806.400.json
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-08-23T081749.400.json
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Cache-Control: no-cache
+
+<> 2019-08-23T081646.400.json
+
+###
+
+PUT https://localhost:5031/api/lastminutes/reload
+Cache-Control: no-cache
+
+<> 2019-08-23T081601.415.json
+
+###
+
+PUT https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-08-23T081532.415.json
+
+###
+
+PUT https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-08-23T081131.500.txt
+
+###
+
+POST https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+POST https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:5030/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:5030/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:5030/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:5030/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
+###
+

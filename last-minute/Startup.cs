@@ -31,7 +31,7 @@ namespace last_minute
                 .AddNewtonsoftJson();
             services.AddDbContext<LastMinuteContext>(options => 
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddHttpClient();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()

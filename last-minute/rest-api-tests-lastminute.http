@@ -1,0 +1,10 @@
+GET https://localhost:5031/api/lastminutes
+Accept: application/json
+Cache-Control: no-cache
+
+###
+
+GET https://localhost:5031/api/lastminutes/reload
+Accept: application/json
+Cache-Control: no-cache
+
