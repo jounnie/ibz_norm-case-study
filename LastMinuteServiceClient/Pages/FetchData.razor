@@ -20,7 +20,7 @@
 </div>
 <br />
 
-@if (flights == null)
+@if (LastMinute == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -32,19 +32,23 @@ else
                 <th></th>
                 <th>Departure</th>
                 <th>Destination</th>
+                <th>Hotel Company</th>
+                <th>Hotel Location</th>
                 <th>Departure Date</th>
                 <th>Arrival Date</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var flight in flights)
+            @foreach (var LastMinute in LastMinute)
             {
                 <tr>
                     <td><button class="btn btn-primary">Ordner</button></td>
-                    <td>@flight.Flying_From</td>
-                    <td>@flight.Flying_To</td>
-                    <td>@flight.Departure_Date_Time.ToShortDateString()</td>
-                    <td>@flight.Departure_Date_Time.ToShortDateString()</td>
+                    <td>@LastMinute.Flights.Flying_From</td>
+                    <td>@LastMinute.Flights.Flying_To</td>
+                    <td>@LastMinute.Rooms.Company</td>
+                    <td>@LastMinute.Rooms.Location</td>
+                    <td>@LastMinute.Flights.Departure_Date_Time.ToShortDateString()</td>
+                    <td>@LastMinute.Flights.Departure_Date_Time.ToShortDateString()</td>
                 </tr>
             }
         </tbody>
@@ -57,10 +61,11 @@ else
     private string DepSearch;
     private string ArrSearch;
 
-    Flights[] flights = Array.Empty<Flights>();
+    LastMinute[] LastMinute = Array.Empty<LastMinute>();
 
-    private void RefreshPage()
+    private async Task RefreshPage()
     {
+        var jsonAsync = await Http.GetJsonAsync<LastMinute[]>("http://localhost:5030/api/lastminutes/reload");
         StateHasChanged();
     }
 
@@ -71,7 +76,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        flights = await FlightsService.LoadFlights();
+        LastMinute = await FlightsService.LoadFlights();
     }
 }
 
