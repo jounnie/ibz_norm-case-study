@@ -4,21 +4,21 @@ skinparam packageStyle rectangle
 actor User
 
 rectangle lastminute-service {
-  (Kombiangebote durchsuchen) -- User
-  (Resevation vornehmen) -- User
-  (Kombiangebote aktualisieren) -- User
+  (Kombi durchsuchen) -- User
+  (Kombi aktualisieren) -- User
+  (Kombi buchen) as (KB) <<Wunschziel>>
+  (KB) -- User
+  (Kombi aktualisieren) -> (Kombi speichern)
 }
 
 rectangle airline-service {
-  (Flugdaten anbieten) <- (Kombiangebote aktualisieren)
+  (Flugdaten anbieten) <-- (Kombi aktualisieren) : uses
   (Flugdaten hinterlegen)
-  (Sitzplatz reservieren) <- (Resevation vornehmen)
 }
 
 rectangle hotel-service {
   (unbelegte Zimmer hinterlegen)
-  (Freie Zimmerdaten anbieten) <- (Kombiangebote aktualisieren)
-  (Zimmer reservieren) <- (Resevation vornehmen)
+  (Freie Zimmerdaten anbieten) <-- (Kombi aktualisieren) : uses
 }
 
 note "nur über einen Datebankzugriff" as N1

@@ -50,7 +50,9 @@ Applikation)
 tbd
 
 ## Usecases
-overview pic mit Muss/Wunschziele
+
+![usecases](pics/usecases.png)
+
 ### UC1 - So und so
 
 | USE CASE # | UC1 - So und so ||
@@ -72,7 +74,7 @@ Secondary Actors|
 
 VARIANTEN?
 
-# Implementation
+![classes](pics/classes.png)
 
 ## Testplan & Resultate
 
