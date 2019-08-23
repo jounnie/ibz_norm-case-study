@@ -1,7 +1,6 @@
-﻿using System;
-using last_minute_shared;
+using System;
 
-namespace last_minute.Models
+namespace last_minute_shared
 {
     public class LastMinute
     {

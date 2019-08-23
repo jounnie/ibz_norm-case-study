@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using last_minute.Models;
+using last_minute_shared;
+using Newtonsoft.Json;
 
 namespace last_minute.Controllers
 {
@@ -15,17 +18,29 @@ namespace last_minute.Controllers
     public class LastMinutesController : ControllerBase
     {
         private readonly LastMinuteContext _context;
+        private readonly IHttpClientFactory _clientFactory;
 
-        public LastMinutesController(LastMinuteContext context)
+        public LastMinutesController(LastMinuteContext context, IHttpClientFactory clientFactory)
         {
             _context = context;
+            _clientFactory = clientFactory;
         }
 
         // GET: api/LastMinutes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LastMinute>>> GetLastMinute()
         {
-            return await _context.LastMinute.ToListAsync();
+            var offers = await _context.LastMinute.ToListAsync();
+
+            foreach (var offer in offers)
+            {
+                var flight = await _context.Flights.FindAsync(offer.Flight_Id);
+                var room = await _context.Rooms.FindAsync(offer.Room_id);
+                offer.Flights = flight;
+                offer.Rooms = room;
+            }
+            
+            return offers;
         }
 
         // GET: api/LastMinutes/5
@@ -96,6 +111,32 @@ namespace last_minute.Controllers
             await _context.SaveChangesAsync();
 
             return lastMinute;
+        }
+        
+        [HttpGet("reload")]
+        public async Task<IActionResult> ReloadData()
+        {
+            var httpClient = _clientFactory.CreateClient();
+            var response = await httpClient.GetStringAsync("http://localhost:5000/api/flights");
+            var responseRooms = await httpClient.GetStringAsync("http://localhost:5010/api/rooms");
+
+            List<Flights> flights = (List<Flights>) JsonConvert.DeserializeObject(response, typeof(List<Flights>));
+            List<Rooms> rooms = (List<Rooms>) JsonConvert.DeserializeObject(responseRooms, typeof(List<Rooms>));
+
+            foreach (var flight in flights)
+            {
+                _context.Flights.Add(flight);                
+            }
+            foreach (var room in rooms)
+            {
+                _context.Rooms.Add(room);
+            }
+            
+            
+
+            await _context.SaveChangesAsync();
+            
+            return NoContent();
         }
 
         private bool LastMinuteExists(long id)
